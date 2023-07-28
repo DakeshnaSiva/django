@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <style>
+        .home_container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            /* background-color:greenyellow; */
+        }
+        
+    </style>
+    <div class="home_container">
+        <div>
+            {% include 'dk/topic.html' %}
+        </div>
+        
+        <div>
+            <h3>{{ room_count }} rooms available</h3>
+            <a href="{% url 'create room' %}">Create room</a>
+            <div>
+                 {% include 'dk/feed.html' %}
+            </div>
+        </div>
+        
+        <div>
+          {% include 'dk/activity.html' %}
+        </div>
+    </div>
+{% endblock %}
